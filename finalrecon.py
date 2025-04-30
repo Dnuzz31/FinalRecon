@@ -198,7 +198,7 @@ try:
 			domain_suffix = parsed_url.domain.split(':')[0]
 			hostname = f'{domain}.{domain_suffix}'
 	else:
-		if len(parsed_url.registered_domain) == 0:
+		if len(parsed_url.top_domain_under_public_suffix) == 0:
 			netloc = parsed_url.domain                              # 8.8.8.8
 			domain = ''
 			domain_suffix = ''
