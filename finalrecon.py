@@ -29,9 +29,9 @@ log_writer(
 import argparse
 
 VERSION = '1.1.7'
-log_writer(f'FinalRecon v{VERSION}')
+log_writer(f'ReconMax v{VERSION}')
 
-parser = argparse.ArgumentParser(description=f'FinalRecon - All in One Web Recon | v{VERSION}')
+parser = argparse.ArgumentParser(description=f'ReconMax - All in One Web Recon | v{VERSION}')
 parser.add_argument('--url', help='Target URL')
 parser.add_argument('--headers', help='Header Information', action='store_true')
 parser.add_argument('--sslinfo', help='SSL Certificate Information', action='store_true')
@@ -56,7 +56,7 @@ ext_help.add_argument('-sp', type=int, help='Specify SSL Port [ Default : 443 ]'
 ext_help.add_argument('-d', help='Custom DNS Servers [ Default : 1.1.1.1 ]')
 ext_help.add_argument('-e', help='File Extensions [ Example : txt, xml, php ]')
 ext_help.add_argument('-o', help='Export Format [ Default : txt ]')
-ext_help.add_argument('-cd', help='Change export directory [ Default : ~/.local/share/finalrecon ]')
+ext_help.add_argument('-cd', help='Change export directory [ Default : ~/.local/share/ReconMax ]')
 ext_help.add_argument('-of', help='Change export folder name [ Default :<path>fr_<hostname>_<date> ]')
 ext_help.add_argument('-k', help='Add API key [ Example : shodan@key ]')
 ext_help.set_defaults(
@@ -77,7 +77,7 @@ ext_help.set_defaults(
 try:
 	args = parser.parse_args()
 except SystemExit:
-	log_writer('[finalrecon] Help menu accessed')
+	log_writer('[ReconMax] Help menu accessed')
 	log_writer(f'{"-" * 30}')
 	sys.exit()
 
