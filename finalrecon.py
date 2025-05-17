@@ -125,20 +125,27 @@ def banner():
 		comms_url = json_data['comms']
 
 	art = r'''
- ______  __   __   __   ______   __
-/\  ___\/\ \ /\ "-.\ \ /\  __ \ /\ \
-\ \  __\\ \ \\ \ \-.  \\ \  __ \\ \ \____
- \ \_\   \ \_\\ \_\\"\_\\ \_\ \_\\ \_____\
-  \/_/    \/_/ \/_/ \/_/ \/_/\/_/ \/_____/
- ______   ______   ______   ______   __   __
-/\  == \ /\  ___\ /\  ___\ /\  __ \ /\ "-.\ \
-\ \  __< \ \  __\ \ \ \____\ \ \/\ \\ \ \-.  \
- \ \_\ \_\\ \_____\\ \_____\\ \_____\\ \_\\"\_\
-  \/_/ /_/ \/_____/ \/_____/ \/_____/ \/_/ \/_/'''
+RRRRRRRRRRRRRRRRR                                                                              MMMMMMMM               MMMMMMMM                                      
+R::::::::::::::::R                                                                             M:::::::M             M:::::::M                                      
+R::::::RRRRRR:::::R                                                                            M::::::::M           M::::::::M                                      
+RR:::::R     R:::::R                                                                           M:::::::::M         M:::::::::M                                      
+  R::::R     R:::::R    eeeeeeeeeeee        cccccccccccccccc   ooooooooooo   nnnn  nnnnnnnn    M::::::::::M       M::::::::::M  aaaaaaaaaaaaa   xxxxxxx      xxxxxxx
+  R::::R     R:::::R  ee::::::::::::ee    cc:::::::::::::::c oo:::::::::::oo n:::nn::::::::nn  M:::::::::::M     M:::::::::::M  a::::::::::::a   x:::::x    x:::::x 
+  R::::RRRRRR:::::R  e::::::eeeee:::::ee c:::::::::::::::::co:::::::::::::::on::::::::::::::nn M:::::::M::::M   M::::M:::::::M  aaaaaaaaa:::::a   x:::::x  x:::::x  
+  R:::::::::::::RR  e::::::e     e:::::ec:::::::cccccc:::::co:::::ooooo:::::onn:::::::::::::::nM::::::M M::::M M::::M M::::::M           a::::a    x:::::xx:::::x   
+  R::::RRRRRR:::::R e:::::::eeeee::::::ec::::::c     ccccccco::::o     o::::o  n:::::nnnn:::::nM::::::M  M::::M::::M  M::::::M    aaaaaaa:::::a     x::::::::::x    
+  R::::R     R:::::Re:::::::::::::::::e c:::::c             o::::o     o::::o  n::::n    n::::nM::::::M   M:::::::M   M::::::M  aa::::::::::::a      x::::::::x     
+  R::::R     R:::::Re::::::eeeeeeeeeee  c:::::c             o::::o     o::::o  n::::n    n::::nM::::::M    M:::::M    M::::::M a::::aaaa::::::a      x::::::::x     
+  R::::R     R:::::Re:::::::e           c::::::c     ccccccco::::o     o::::o  n::::n    n::::nM::::::M     MMMMM     M::::::Ma::::a    a:::::a     x::::::::::x    
+RR:::::R     R:::::Re::::::::e          c:::::::cccccc:::::co:::::ooooo:::::o  n::::n    n::::nM::::::M               M::::::Ma::::a    a:::::a    x:::::xx:::::x   
+R::::::R     R:::::R e::::::::eeeeeeee   c:::::::::::::::::co:::::::::::::::o  n::::n    n::::nM::::::M               M::::::Ma:::::aaaa::::::a   x:::::x  x:::::x  
+R::::::R     R:::::R  ee:::::::::::::e    cc:::::::::::::::c oo:::::::::::oo   n::::n    n::::nM::::::M               M::::::M a::::::::::aa:::a x:::::x    x:::::x 
+RRRRRRRR     RRRRRRR    eeeeeeeeeeeeee      cccccccccccccccc   ooooooooooo     nnnnnn    nnnnnnMMMMMMMM               MMMMMMMM  aaaaaaaaaa  aaaaxxxxxxx      xxxxxxx'''
 	print(f'{G}{art}{W}\n')
-	print(f'{G}[>]{C} Created By   :{W} thewhiteh4t')
-	print(f'{G} |--->{C} Twitter   :{W} {twitter_url}')
-	print(f'{G} |--->{C} Community :{W} {comms_url}')
+	print(f'{G}[>]{C} Created By   :{W} R DHANUSH, SAI KIRAN & AJAY')
+	print(f'{G} |--->{C} LINKEDIN   :{W} https://www.linkedin.com/in/dhanushr31/')
+	print(f'{G}[>]{C} Contribution  :{W} Equal Collaboration (50/50)')
+	print(f'{G}[>]{C} Credits To    :{W} R DHANUSH, SAI KIRAN & AJAY\n')
 	print(f'{G}[>]{C} Version      :{W} {VERSION}\n')
 
 
@@ -198,12 +205,12 @@ try:
 			domain_suffix = parsed_url.domain.split(':')[0]
 			hostname = f'{domain}.{domain_suffix}'
 	else:
-		if len(parsed_url.top_domain_under_public_suffix) == 0:
+		if parsed_url.domain == '' and parsed_url.suffix == '':
 			netloc = parsed_url.domain                              # 8.8.8.8
 			domain = ''
 			domain_suffix = ''
 		else:
-			netloc = parsed_url.fqdn                                # abc.com
+			netloc = f"{parsed_url.domain}.{parsed_url.suffix}"  # abc.com                                # abc.com
 			domain = parsed_url.domain
 			domain_suffix = parsed_url.suffix
 		hostname = netloc
